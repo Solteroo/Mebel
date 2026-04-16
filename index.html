@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIWEB | Biznes va Vizitka Sayt Yaratish</title>
+<meta name="description" content="O'zbekistonda professional bir saxifali va vizitka sayt yaratish xizmati. Biznesingiz uchun zamonaviy web dizayn.">
+<meta name="keywords" content="landing page uzbekistan, website creation, biznes sayt, vizitka sayt, bir saxifali, aiweb uz">
+<meta name="author" content="AIWEB">
+<!-- ICONS uchun -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+:root{
+--gold:#d4af37;
+--bg:#070707;
+--card:#111;
+--text:#fff;
+--muted:#aaa;
+}
+
+body{background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* ================= LOADER ================= */
+#loader{
+position:fixed;
+inset:0;
+background:#050505;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+
+.logo-loader{
+font-size:22px;
+font-weight:900;
+letter-spacing:2px;
+color:#d4af37;
+margin-bottom:20px;
+}
+.logo{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:1px;
+
+  background:linear-gradient(90deg,#d4af37,#ffdd55,#b8860b);
+  background-size:200% 100%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:shine 3s linear infinite, pulse 2s ease-in-out infinite;
+}
+
+/* moving gradient (shine effect) */
+@keyframes shine{
+  0%{background-position:0% 50%;}
+  100%{background-position:200% 50%;}
+}
+
+/* glow breathing effect */
+@keyframes pulse{
+  0%,100%{
+    filter:drop-shadow(0 0 5px rgba(0,255,198,0.3));
+    transform:scale(1);
+  }
+  50%{
+    filter:drop-shadow(0 0 15px rgba(0,255,198,0.9));
+    transform:scale(1.05);
+  }
+}
+  
+.bar{
+width:220px;
+height:6px;
+background:rgba(255,255,255,0.1);
+border-radius:20px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#d4af37,#ffdd55);
+transition:0.1s;
+}
+
+#percent{
+margin-top:10px;
+color:#aaa;
+font-size:14px;
+}
+
+/* ================= SITE ================= */
+
+.bg{
+position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;
+background:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+filter:brightness(0.18);
+transform:scale(1.1);
+}
+
+/* NAVBAR */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 20px;
+}
+
+.nav.scrolled{
+  background:rgba(0,0,0,0.8);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 🔥 BODY SCROLL FIX */
+body.no-scroll{
+  overflow:hidden;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+perspective:1000px;
+}
+
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:flex;
+  }
+
+ .menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:100%;
+  height:100vh;
+
+  background:rgba(10,10,10,0.75);
+  backdrop-filter: blur(18px);
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:flex-start; /* 🔥 yuqoridan boshlansin */
+  align-items:center;
+
+  padding-top:120px; /* 🔥 pastga tushiradi */
+
+  gap:25px;
+
+  transition:0.35s ease;
+}
+  
+  .menu.active{
+    right:0;
+  }
+
+.menu a{
+  position:relative;
+  display:block;
+  width:80%;
+  text-align:center;
+
+  padding:14px 18px;
+  border-radius:14px;
+
+  font-size:20px;
+  font-weight:600;
+
+  color:#ddd;
+  text-decoration:none;
+
+  background:rgba(255,255,255,0.03);
+
+  transition:0.25s ease;
+}
+
+/* hover effect */
+.menu a:hover{
+  background:rgba(212,175,55,0.12);
+  color:var(--gold);
+  transform:scale(1.03);
+}
+
+/* underline (single clean version) */
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:6px;
+  transform:translateX(-50%);
+
+  width:0%;
+  height:2px;
+
+  background:var(--gold);
+  transition:0.25s ease;
+  opacity:0;
+
+  pointer-events:none;
+}
+
+.menu a:hover::after{
+  width:60%;
+  opacity:1;
+}
+
+/* active link */
+.menu a.active{
+  background:rgba(212,175,55,0.18);
+  color:var(--gold);
+  border:1px solid rgba(212,175,55,0.25);
+}
+
+.menu a.active::after{
+  width:60%;
+  opacity:1;
+}
+
+/* remove click "jump" effect bug */
+.menu a:active{
+  transform:scale(0.98);
+}
+/* 🔥 FLOAT TOOLTIP */
+.float a::after{
+  content:attr(data-name);
+  position:absolute;
+  right:70px;
+  background:#111;
+  padding:6px 10px;
+  border-radius:6px;
+  font-size:12px;
+  opacity:0;
+  transition:0.3s;
+  white-space:nowrap;
+}
+
+.float a:hover::after{
+  opacity:1;
+}
+.menu-toggle{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  z-index:2000;
+}
+
+.menu-toggle span{
+  width:28px;
+  height:3px;
+  background:#fff;
+  border-radius:5px;
+  display:block;
+}
+.hero h1{
+font-size:clamp(38px,5vw,74px);
+font-weight:900;
+color:var(--gold);
+}
+
+.hero p{margin-top:15px;max-width:700px;color:#bbb}
+
+.btn{
+margin-top:25px;
+padding:14px 34px;
+border-radius:40px;
+background:var(--gold);
+color:#000;
+font-weight:900;
+text-decoration:none;
+display:inline-block;
+}
+  .btn:hover{transform:scale(1.05);box-shadow:0 0 20px #d4af37}
+
+.btn-outline{
+background:transparent;
+border:1px solid var(--gold);
+color:var(--gold);
+margin-left:10px;
+}
+/* TRUST BAR */
+.trust{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:40px;
+flex-wrap:wrap;
+color:#bbb;
+}
+  
+section{padding:90px 10%}
+
+h2{text-align:center;margin-bottom:40px;font-size:30px;color:var(--gold)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+
+.card{background:rgba(17,17,17,0.9);padding:24px;border-radius:16px;border:1px solid #222}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:10px}
+.card h3{color:var(--gold)}
+.card p{color:#aaa}
+
+.price{background:rgba(17,17,17,0.95);padding:28px;border-radius:18px;text-align:center;position:relative}
+
+.ribbon{position:absolute;top:12px;right:-30px;background:var(--gold);color:#000;padding:5px 40px;transform:rotate(35deg);font-size:12px;font-weight:800}
+
+.price span{font-size:40px;color:var(--gold);font-weight:900}
+.price ul{list-style:none;margin-top:12px;color:#aaa;line-height:1.8}
+.price ul li::before{content:"✔ ";color:var(--gold)}
+
+.contact-box{text-align:center;margin-top:30px}
+.contact-btn{display:inline-block;margin:10px;padding:14px 22px;border-radius:40px;text-decoration:none;font-weight:800}
+.telegram{background:var(--gold);color:#000}
+.phone{background:#111;border:1px solid #333;color:#fff}
+
+  .float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:999;
+}
+
+/* umumiy button */
+.float a{
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:#fff;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  transition:0.3s;
+  position:relative;
+}
+
+/* TELEGRAM */
+.float .tg{
+  background:#0088cc;
+}
+
+/* WHATSAPP */
+.float .wa{
+  background:#25D366;
+}
+
+/* hover effect */
+.float a:hover{
+  transform:translateY(-5px) scale(1.1);
+}
+
+/* glow pulse */
+.float a::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background:inherit;
+  opacity:0.6;
+  z-index:-1;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{
+    transform:scale(1);
+    opacity:0.6;
+  }
+  70%{
+    transform:scale(1.6);
+    opacity:0;
+  }
+  100%{
+    opacity:0;
+  }
+}
+  .project-card{
+  position:relative;
+  display:block;
+  border-radius:16px;
+  overflow:hidden;
+  text-decoration:none;
+  border:1px solid #222;
+  transition:0.3s;
+}
+
+.project-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  transition:0.4s;
+}
+
+.project-card:hover img{
+  transform:scale(1.1);
+  filter:brightness(0.6);
+}
+
+.overlay{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:18px;
+  background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color:#fff;
+}
+
+.overlay h3{
+  color:#d4af37;
+  margin-bottom:5px;
+}
+footer{text-align:center;padding:40px;background:#000;color:#555}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.hero h1,.hero p,.btn{animation:fadeUp .8s ease}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+<div class="logo-loader">AIWEB</div>
+<div class="bar"><div class="fill" id="fill"></div></div>
+<div id="percent">0%</div>
+</div>
+
+<div class="bg"></div>
+
+<nav class="nav" data-aos="fade-down">
+  <div class="nav-container">
+
+    <div class="logo">AIWEB</div>
+
+    <div class="menu" id="menu">
+      <a href="#services">Xizmatlar</a>
+      <a href="#portfolio">Loyixalar</a>
+      <a href="#pricing">Narxlar</a>
+      <a href="#contact">Aloqa</a>
+    </div>
+
+    <div class="menu-toggle" id="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</nav>
+
+<section class="hero">
+<div class="hero-box" id="heroBox">
+<div class="badge" data-aos="fade-up">🔥 2026 AI Landing System</div>
+<h1 data-aos="zoom-in">Klient olib keladigan sayt</h1>
+<p data-aos="fade-up">Biznesingiz uchun sotuvchi landing page va vizitka saytlar</p>
+<a class="btn" href="#contact" data-aos="zoom-in">Bepul konsultatsiya</a>
+  <a class="btn btn-outline" href="#services">Xizmatlar</a>
+  <div class="trust">
+<span>✔ 100+ loyiha</span>
+<span>✔ 50+ mijoz</span>
+<span>✔ 7 kun</span>
+<span>✔ SEO</span>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2 data-aos="fade-up">Xizmatlar</h2>
+<div class="grid">
+
+<div class="card" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=60">
+<h3>Landing Page</h3><p>1 sahifali sotuvchi sayt</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=800&q=60">
+<h3>Vizitka sayt</h3><p>Kichik biznes uchun ideal</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=60">
+<h3>Redesign</h3><p>Eski saytni yangilash</p>
+</div>
+</div>
+</section>
+
+  <!-- PORTFOLIO -->
+<section id="portfolio">
+<h2>Loyixalar</h2>
+<div class="grid">
+
+  <a href="https://yourproject1.com" target="_blank" class="project-card">
+    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=60" alt="Mebel sayti">
+    <div class="overlay">
+      <h3>Mebellar sayti</h3>
+      <p>Saytni ko'rish →</p>
+    </div>
+  </a>
+
+  <a href="https://your-barber-site.com" target="_blank" class="project-card">
+  
+  <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=60" alt="Barber Shop">
+
+  <div class="overlay">
+    <h3>Sartaroshxona</h3>
+    <p>Saytni ko'rish →</p>
+  </div>
+
+</a>
+
+  <a href="https://your-shop-site.com" target="_blank" class="project-card">
+
+  <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=60" alt="Online do'kon">
+
+  <div class="overlay">
+    <h3>Elektronika do'kon</h3>
+    <p>Saytni ko'rish →</p>
+  </div>
+
+</a>
+
+</div>
+</section>
+  
+<!-- TRUST -->
+<section id="trust">
+<h2 data-aos="fade-up">Nega biz?</h2>
+<div class="grid">
+
+<div class="card"><h3>30+ loyiha</h3><p>Real mijozlar ishlari</p></div>
+<div class="card"><h3>24/7 Support</h3><p>Doim aloqa</p></div>
+<div class="card"><h3>Tez tayyor</h3><p>3–7 kun</p></div>
+<div class="card"><h3>SEO</h3><p>Google optimizatsiya</p></div>
+
+</div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+<h2 data-aos="fade-up">Narxlar</h2>
+<div class="grid">
+
+<div class="price">
+<div class="ribbon">BASIC</div>
+<h3>Starter</h3><span>100-150$</span>
+<ul><li>1 sahifa</li><li>Oddiy dizayn</li></ul>
+</div>
+
+<div class="price">
+<div class="ribbon">POPULAR</div>
+<h3>Standard</h3><span>200-250$</span>
+<ul><li>Animatsiya</li><li>SEO</li></ul>
+</div>
+
+<div class="price">
+<div class="ribbon">PRO</div>
+<h3>Business</h3><span>300-350$</span>
+<ul><li>Full system</li><li>Premium UX</li></ul>
+</div>
+
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<h2 data-aos="fade-up">FAQ</h2>
+<div class="grid">
+
+<div class="card"><h4>Nicha gunda tayyor boladi?</h4><p>3–7 kun</p></div>
+<div class="card"><h4>Mobile telefonga togri qeladimi?</h4><p>Ha</p></div>
+<div class="card"><h4>SEO google qidrivdan chiqadimi?</h4><p>Ha</p></div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 data-aos="fade-up">Aloqa</h2>
+<div class="contact-box">
+<a class="contact-btn telegram" href="https://imo.onelink.me/7QOl/iso">IMO</a>
+<a class="contact-btn phone" href="tel:+918826816138">Telefon</a>
+</div>
+</section>
+
+ <!-- FLOAT -->
+<div class="float">
+ <a class="contact-btn phone" href="tel:+918826816138">
+  <i class="fas fa-phone"></i>
+</a>
+  <a class="contact-btn phone" href="https://imo.onelink.me/7QOl/iso" target="_blank">
+  <i class="fas fa-comments"></i>
+</a>
+</div>
+  
+<footer>
+© 2026 AIWEB<p> Barcha huquqlar himoyalangan</p>
+</footer>
+
+  <script>
+  AOS.init();
+/* NAVBAR SCROLL */
+window.addEventListener("scroll",()=>{
+  document.querySelector(".nav")
+    .classList.toggle("scrolled", window.scrollY > 50);
+});
+
+/* ACTIVE MENU */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".menu a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if(a.getAttribute("href") === "#" + current){
+      a.classList.add("active");
+    }
+  });
+});
+
+/* MENU */
+const toggle = document.getElementById("toggle");
+const menu = document.getElementById("menu");
+
+toggle.onclick = () => {
+  menu.classList.toggle("active");
+  toggle.classList.toggle("active"); // 🔥 animatsiya
+  document.body.classList.toggle("no-scroll");
+};
+
+/* LINK BOSILGANDA YOPISH */
+document.querySelectorAll(".menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("active");
+    toggle.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+  });
+});
+
+/* AOS */
+AOS.init();
+
+/* HERO 3D */
+const heroBox=document.getElementById('heroBox');
+document.addEventListener('mousemove',(e)=>{
+let x=(window.innerWidth/2 - e.clientX)/25;
+let y=(window.innerHeight/2 - e.clientY)/25;
+heroBox.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
+});
+
+/* LOADER */
+let p=0;
+const fill=document.getElementById("fill");
+const percent=document.getElementById("percent");
+
+let load=setInterval(()=>{
+p+=5;
+fill.style.width=p+"%";
+percent.innerText=p+"%";
+
+if(p>=100){
+clearInterval(load);
+document.getElementById("loader").style.display="none";
+}
+},30);
+</script>
+
+</body>
+</html>
