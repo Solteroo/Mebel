@@ -1,0 +1,12 @@
+{
+  "name": "mebellar",
+  "version": "1.0.0",
+  "description": "Golden Mebel - Premium furniture website",
+  "private": true,
+  "scripts": {
+    "build": "echo 'No build required for static site'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.0"
+  }
+}
