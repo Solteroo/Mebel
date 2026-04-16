@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline | AIWEB.UZ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color:#fff;
+  overflow:hidden;
+}
+
+/* BACKGROUND GLOW */
+.bg-blur{
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:#3b82f6;
+  filter:blur(150px);
+  opacity:0.2;
+  animation:move 10s infinite alternate;
+}
+
+@keyframes move{
+  from{transform:translate(-100px,-100px)}
+  to{transform:translate(100px,100px)}
+}
+
+/* CARD */
+.card{
+  position:relative;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:40px;
+  text-align:center;
+  max-width:400px;
+  width:90%;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* ICON */
+.icon{
+  font-size:60px;
+  margin-bottom:20px;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:0.6}
+  50%{opacity:1}
+}
+
+h1{
+  font-size:28px;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+p{
+  font-size:14px;
+  opacity:0.7;
+  margin-bottom:25px;
+}
+
+/* BUTTON */
+button{
+  background: linear-gradient(135deg,#3b82f6,#6366f1);
+  border:none;
+  padding:12px 25px;
+  border-radius:10px;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(59,130,246,0.4);
+}
+
+footer{
+  margin-top:20px;
+  font-size:12px;
+  opacity:0.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-blur"></div>
+
+<div class="card">
+  <div class="icon">📡</div>
+  <h1>Internet yo‘q</h1>
+  <p>Siz hozir offline rejimdasiz. Internet ulangach, sayt to‘liq ishlaydi.</p>
+
+  <button onclick="location.reload()">Qayta urinish</button>
+
+  <footer>AIWEB.UZ</footer>
+</div>
+
+</body>
+</html>
