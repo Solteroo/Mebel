@@ -231,7 +231,15 @@
   © 2026 GOLDEN MEBEL
   <p>All rights reserved</p>
 </footer>
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("SW ishladi"))
+      .catch(err => console.log("SW error", err));
+  });
+}
+</script>
 <!-- SCRIPTS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="./script.js"></script>
