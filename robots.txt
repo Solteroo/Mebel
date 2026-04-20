@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://yrb.netlify.app/sitemap.xml
+Sitemap: https://mebellar-plum.vercel.app/sitemap.xml
 
 # Optional: block useless folders (agar bo‘lsa)
 Disallow: /admin/
