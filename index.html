@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 
 <head>
 
   <!-- META -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Premium mebel Toshkent. 10 kunda tayyor, bepul dizayn, 5 yil kafolat.">
+  <meta name="description" content="Premium furniture in Tashkent. Ready in 10 days, free design, 5 years warranty.">
   <meta name="format-detection" content="telephone=yes">
   <meta name="theme-color" content="#ff9900">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Golden Mebel">
-  <meta name="language" content="uz">
+  <meta name="language" content="en">
   <meta name="revisit-after" content="7 days">
   <meta name="msapplication-TileColor" content="#ff9900">
-  
+
   <!-- GEO -->
   <meta name="geo.region" content="UZ-TK">
   <meta name="geo.placename" content="Tashkent">
@@ -23,240 +23,214 @@
   <!-- OPEN GRAPH -->
   <meta property="og:url" content="https://mebellar-plum.vercel.app/">
   <meta property="og:title" content="Golden Mebel">
-  <meta property="og:description" content="Premium mebel xizmatlari, 10 kunda tayyor, 5 yil kafolat.">
+  <meta property="og:description" content="Premium furniture services, 10 days delivery, 5 years warranty.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0?auto=format&fit=crop&w=1200">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="uz_UZ">
+  <meta property="og:locale" content="en_US">
 
-  <!-- TITLE -->
   <title>GOLDEN MEBEL</title>
 
   <!-- CANONICAL -->
-  <link rel="canonical" href="https://mebellar-plum.vercel.app/>
-  
+  <link rel="canonical" href="https://mebellar-plum.vercel.app"/>
+
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- LIBRARIES -->
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- YOUR CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="./style.css">
-  
-   <!-- PWA -->
- <link rel="icon" type="image/x-icon" href="./favicon.png">
 
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <!-- PWA -->
+  <link rel="icon" href="./favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="manifest" href="./manifest.json">
 
-<link rel="apple-touch-icon" href="./icon-192.png">
- 
-<link rel="manifest" href="./manifest.json">
 </head>
 
 <body>
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="spinner"></div>
+<!-- LOADER -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">GOLDEN MEBEL</div>
+
+  <a href="tel:+99361403543">📞</a>
+
+  <div class="burger" onclick="toggleMenu()">☰</div>
+
+  <div class="menu">
+    <a href="#">Home</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#order">Order</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header>
+  <video autoplay muted loop playsinline>
+    <source src="./go.mp4" type="video/mp4">
+  </video>
+
+  <div>
+    <h1>Premium Furniture</h1>
+    <p style="margin-top:10px;color:#cccccc">
+      ⚡ Order today — free design included
+    </p>
+    <a class="btn" href="#order">Place Order</a>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- FEATURES -->
+  <h2 data-aos="fade-up">Why choose us?</h2>
+
+  <div class="features">
+    <div class="glass">📍 Service across Tashkent</div>
+    <div class="glass"><i class="fas fa-tools"></i>10 years experience</div>
+    <div class="glass"><i class="fas fa-shield-alt"></i>5 years warranty</div>
+    <div class="glass"><i class="fas fa-truck"></i>Fast delivery</div>
+    <div class="glass"><i class="fas fa-pencil-ruler"></i>Custom design</div>
+    <div class="glass"><i class="fas fa-hand-holding-heart"></i>Consultation</div>
   </div>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">GOLDEN MEBEL</div>
-    
-    <a href="tel:+99361403543">📞</a>
+  <!-- PORTFOLIO -->
+  <h2 style="margin-top:50px" data-aos="fade-up">Projects</h2>
 
-    <div class="burger" onclick="toggleMenu()">☰</div>
+  <div class="portfolio" id="portfolio">
 
-    <div class="menu">
-      <a href="#">Bosh sahifa</a>
-      <a href="#portfolio">Loyihalar</a>
-      <a href="#order">Buyurtma</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header>
-    <video autoplay muted loop playsinline>
-      <source src="./go.mp4" type="video/mp4">
-    </video>
-
-    <div>
-      <h1>Premium Mebel</h1>
-      <p style="margin-top:10px;color:#cccccc">
-⚡ Bugun buyurtma bersangiz — bepul dizayn
-</p>
-      <a class="btn" href="#order">Buyurtma qoldirish</a>
-    </div>
-  </header>
-
-  <!-- CONTAINER -->
-  <div class="container">
-
-    <!-- FEATURES -->
-    <h2 data-aos="fade-up">Nega bizni tanlashadi?</h2>
-
-    <div class="features">
-      <div class="glass">📍 Toshkent bo‘ylab xizmat</div>
-      <div class="glass"><i class="fas fa-tools"></i>10 yillik tajriba</div>
-      <div class="glass"><i class="fas fa-shield-alt"></i>5 yil kafolat</div>
-      <div class="glass"><i class="fas fa-truck"></i>Tez yetkazish</div>
-      <div class="glass"><i class="fas fa-pencil-ruler"></i>Individual dizayn</div>
-      <div class="glass"><i class="fas fa-hand-holding-heart"></i>Maslahat</div>
+    <div class="item" onclick="openImage(this)">
+      <img src="./oshxona.jpg" loading="lazy" alt="Kitchen furniture">
+      <div class="item-text">Kitchen set | $1200 | 10 days</div>
     </div>
 
-    <!-- PORTFOLIO -->
-    <h2 style="margin-top:50px" data-aos="fade-up">Loyihalar</h2> 
+    <div class="item" onclick="openImage(this)">
+      <img src="./xona.jpg" loading="lazy" alt="Bedroom furniture">
+      <div class="item-text">Bedroom set | $900 | 8 days</div>
+    </div>
 
-    <div class="portfolio" id="portfolio">
+    <div class="item" onclick="openImage(this)">
+      <img src="./mexmonxona.jpg" loading="lazy" alt="Living room furniture">
+      <div class="item-text">Living room | $1500 | 12 days</div>
+    </div>
 
-      <div class="item" onclick="openImage(this)">
-  <img 
-    src="./oshxona.jpg?w=800&fit=crop&q=80&auto=format"
-    loading="lazy"
-    alt="Oshxona mebeli"
-  >
-  <div class="item-text">Oshxona mebellari | $1200 | 10 kun</div>
-</div>
+    <div class="item" onclick="openImage(this)">
+      <img src="./ofis.jpg" loading="lazy" alt="Office furniture">
+      <div class="item-text">Office set | $800 | 7 days</div>
+    </div>
 
-  <div class="item" onclick="openImage(this)">
-  <img 
-    src="./xona.jpg?w=800&q=80&auto=format&fit=crop"
-    loading="lazy"
-    alt="Yotoqxona mebeli"
-  >
-  <div class="item-text">Yotoqxona mebellari | $900 | 8 kun</div>
-</div>
+    <div class="item" onclick="openImage(this)">
+      <img src="./yotoq.jpg" loading="lazy" alt="Bedroom set">
+      <div class="item-text">Bedroom | $950 | 9 days</div>
+    </div>
 
- <div class="item" onclick="openImage(this)">
-  <img 
-    src="./mexmonxona.jpg?w=800&q=80&auto=format&fit=crop"
-    loading="lazy"
-    alt="Mehmonxona mebeli"
-  >
-  <div class="item-text">Mehmonxona mebellari | $1500 | 12 kun</div>
-</div>
+    <div class="item" onclick="openImage(this)">
+      <img src="./komplekt.jpg" loading="lazy" alt="Kitchen set">
+      <div class="item-text">Kitchen set | $1300 | 11 days</div>
+    </div>
 
-<div class="item" onclick="openImage(this)">
-  <img 
-    src="./ofis.jpg?w=800&q=80&auto=format&fit=crop"
-    loading="lazy"
-    alt="Ofis mebellari"
-  >
-  <div class="item-text">Ofis mebellari | $800 | 7 kun</div>
-</div>
+    <div class="item" onclick="openImage(this)">
+      <img src="./bolalar.jpg" loading="lazy" alt="Kids room furniture">
+      <div class="item-text">Kids room | $700 | 6 days</div>
+    </div>
 
-<div class="item" onclick="openImage(this)">
-  <img 
-    src="./yotoq.jpg?w=800&q=80&auto=format"
-    loading="lazy"
-    alt="Yotoq xonasi mebellari"
-  >
-  <div class="item-text">Yotoq xonasi mebellari | $950 | 9 kun</div>
-</div>
-
-<div class="item" onclick="openImage(this)">
-  <img 
-    src="./komplekt.jpg?w=800&q=80&auto=format"
-    loading="lazy"
-    alt="Oshxona komplekti"
-  >
-  <div class="item-text">Oshxona komplekti mebellari | $1300 | 11 kun</div>
-</div>
-
- <div class="item" onclick="openImage(this)">
-  <img 
-    src="./bolalar.jpg?w=800&q=80&auto=format&fit=crop"
-    loading="lazy"
-    alt="Bolalar xonasi mebeli"
-  >
-  <div class="item-text">Bolalar xonasi mebellari | $700 | 6 kun</div>
-</div>
-
- <div class="item" onclick="openImage(this)">
-  <img 
-    src="./stol.jpg?w=800&q=80&auto=format&fit=crop"
-    loading="lazy"
-    alt="Stol va stullar"
-  >
-  <div class="item-text">Stol-stul mebellari | $500 | 5 kun</div>
-</div></div>
-
-    <!-- REVIEWS -->
-    <h2 style="margin-top:50px" data-aos="fade-up">Mijozlar fikri</h2>
-
-    <div class="review">    
-  <div class="review-top">    
-    <img src="https://i.pravatar.cc/60?img=12">    
-    <div>    
-      <strong>Azizbek Karimov</strong><br>    
-      <small>Oshxona mebeli</small>    
-    </div>    
-  </div>    
-  <p>Juda tez va sifatli chiqdi. Dizayn aynan kutganimdek.</p>    
-  <div>⭐⭐⭐⭐⭐</div>    
-</div>  <div class="review">    
-  <div class="review-top">    
-    <img src="https://i.pravatar.cc/60?img=32">    
-    <div>    
-      <strong>Dilnoza Ismoilova</strong><br>    
-      <small>Yotoqxona mebeli</small>    
-    </div>    
-  </div>    
-  <p>Sifat zo‘r, montaj ham aniq va chiroyli.</p>    
-  <div>⭐⭐⭐⭐⭐</div>    
-</div>  <div class="review">    
-  <div class="review-top">    
-    <img src="https://i.pravatar.cc/60?img=45">    
-    <div>    
-      <strong>Roza Rasulova</strong><br>    
-      <small>Ofis mebeli</small>    
-    </div>    
-  </div>    
-  <p>Professional jamoa. Hammasi vaqtida bajarildi.</p>    
-  <div>⭐⭐⭐⭐⭐</div>    
-</div> 
-
-    <!-- ORDER -->
-    <div class="contact" id="order">
-      <h2>Buyurtma qoldiring</h2>    
-  <p style="color:#ff9900">⏳ Sizga 10% chegirma!</p>
-
-      <form onsubmit="sendTG(event)">
-        <input type="text" id="name" placeholder="Ism" required>
-        <input type="tel" id="phone" placeholder="Telefon" required>
-        <button class="btn" type="submit">YUBORISH</button>
-      </form>
+    <div class="item" onclick="openImage(this)">
+      <img src="./stol.jpg" loading="lazy" alt="Tables and chairs">
+      <div class="item-text">Tables & chairs | $500 | 5 days</div>
     </div>
 
   </div>
 
-  <!-- MAP -->
-  <div class="map">
-   <h3 style="text-align:center">Bizning manzil</h3>
-<iframe src="https://maps.google.com/maps?q=tashkent&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+  <!-- REVIEWS -->
+  <h2 style="margin-top:50px" data-aos="fade-up">Customer Reviews</h2>
+
+  <div class="review">
+    <div class="review-top">
+      <img src="https://i.pravatar.cc/60?img=12">
+      <div>
+        <strong>Azizbek Karimov</strong><br>
+        <small>Kitchen furniture</small>
+      </div>
+    </div>
+    <p>Very fast and high quality. Exactly what I expected.</p>
+    <div>⭐⭐⭐⭐⭐</div>
+  </div>
+
+  <div class="review">
+    <div class="review-top">
+      <img src="https://i.pravatar.cc/60?img=32">
+      <div>
+        <strong>Did you like it?</strong><br>
+        <small>Bedroom furniture</small>
+      </div>
+    </div>
+    <p>Great quality and perfect installation.</p>
+    <div>⭐⭐⭐⭐⭐</div>
+  </div>
+
+  <div class="review">
+    <div class="review-top">
+      <img src="https://i.pravatar.cc/60?img=45">
+      <div>
+        <strong>Rosa Rasulova</strong><br>
+        <small>Office furniture</small>
+      </div>
+    </div>
+    <p>Professional team. Everything was done on time.</p>
+    <div>⭐⭐⭐⭐⭐</div>
+  </div>
+
+  <!-- ORDER -->
+  <div class="contact" id="order">
+    <h2>Place an Order</h2>
+    <p style="color:#ff9900">⏳ Get 10% discount!</p>
+
+    <form onsubmit="sendTG(event)">
+      <input type="text" id="name" placeholder="Your name" required>
+      <input type="tel" id="phone" placeholder="Phone number" required>
+      <button class="btn" type="submit">SEND</button>
+    </form>
+  </div>
+
 </div>
 
-   <!-- FLOAT -->
+<!-- MAP -->
+<div class="map">
+  <h3 style="text-align:center">Our location</h3>
+  <iframe src="https://maps.google.com/maps?q=tashkent&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<!-- FLOAT -->
 <div class="float">
- <a class="contact-btn phone" href="tel:+99361403543">
-  <i class="fas fa-phone"></i>
-</a>
+  <a class="contact-btn phone" href="tel:+99361403543">
+    <i class="fas fa-phone"></i>
+  </a>
+
   <a class="contact-btn phone" href="https://imo.onelink.me/7QOl/iso" target="_blank">
-  <i class="fas fa-comments"></i>
-</a>
+    <i class="fas fa-comments"></i>
+  </a>
 </div>
 
-  <!-- FOOTER -->
- <footer>© 2026 GOLDEN MEBEL <p> Barcha huquqlar himoyalangan</p></footer>  
+<!-- FOOTER -->
+<footer>
+  © 2026 GOLDEN MEBEL
+  <p>All rights reserved</p>
+</footer>
 
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="./script.js"></script>
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="./script.js"></script>
 
 </body>
 </html>
