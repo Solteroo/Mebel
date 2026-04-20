@@ -20,45 +20,64 @@ if (window.AOS) {
 
 
 // TELEGRAM FORM
-function sendTG(e) {
-  e.preventDefault();
+/* ================= SEND ORDER ================= */
+function sendOrder() {
+  const btn = document.querySelector(".send-btn");
+  if (!btn) return;
 
-  const name = document.getElementById("name")?.value || "";
-  const phone = document.getElementById("phone")?.value || "";
+  const name = document.getElementById("name")?.value.trim();
+  const phone = document.getElementById("phone")?.value.trim();
+  const message = document.getElementById("comment")?.value.trim();
 
-  const text = `Salom ismim ${name}, telefon: ${phone}`;
+  if (!name || !phone) {
+    alert("Enter name and phone!");
+    return;
+  }
 
-  window.open(
-    `https://t.me/aiwebuz?start=${encodeURIComponent(text)}`
-  );
+  btn.innerText = "Sending...";
+
+  const text = `
+🆕 New order
+👤 Name: ${name}
+📞 Phone: ${phone}
+📝 Message: ${message || "-"}
+`;
+
+  fetch("https://api.telegram.org/bot8656722392:AAH8VPMWxKs5S9z1VD00m_3Mp-SHVUu3EQ8/sendMessage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: "8779954504",
+      text
+    })
+  })
+  .then(res => {
+    if (!res.ok) throw new Error();
+    btn.innerText = "Sent ✅";
+  })
+  .catch(() => {
+    btn.innerText = "Error ❌";
+  });
 }
-window.sendTG = sendTG;
-
 
 // MENU
+const menu = document.querySelector(".menu");
+const burger = document.querySelector(".burger");
+
 function toggleMenu() {
-  document.querySelector(".menu")?.classList.toggle("active");
+  menu.classList.toggle("active");
 }
+
 window.toggleMenu = toggleMenu;
 
-
-// OUTSIDE CLICK
 document.addEventListener("click", (e) => {
-  const menu = document.querySelector(".menu");
-  const burger = document.querySelector(".burger");
-
-  if (!menu || !burger) return;
-
   if (!menu.contains(e.target) && !burger.contains(e.target)) {
     menu.classList.remove("active");
   }
 });
 
-
-// NAV SCROLL
 window.addEventListener("scroll", () => {
-  document.querySelector("nav")
-    ?.classList.toggle("scrolled", window.scrollY > 50);
+  document.querySelector("nav")?.classList.toggle("scrolled", window.scrollY > 50);
 });
 
 
@@ -124,4 +143,4 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("/sw.js")
     .catch(err => console.log("SW error:", err));
-}
+      }
