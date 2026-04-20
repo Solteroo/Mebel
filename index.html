@@ -72,7 +72,7 @@
   <div class="menu">
     <a href="#">Home</a>
     <a href="#portfolio">Projects</a>
-    <a href="#order">Order</a>
+    <a href="#contact">Order</a>
   </div>
 </nav>
 
@@ -87,7 +87,7 @@
     <p style="margin-top:10px;color:#cccccc">
       ⚡ Order today — free design included
     </p>
-    <a class="btn" href="#order">Place Order</a>
+    <a class="btn" href="#contact">Place Order</a>
   </div>
 </header>
 
@@ -191,19 +191,23 @@
     <div>⭐⭐⭐⭐⭐</div>
   </div>
 
-  <!-- ORDER -->
-  <div class="contact" id="order">
-    <h2>Place an Order</h2>
-    <p style="color:#ff9900">⏳ Get 10% discount!</p>
+  <!-- CONTACT -->
+<section id="contact">
+<div class="contact-box">
 
-    <form onsubmit="sendTG(event)">
-      <input type="text" id="name" placeholder="Your name" required>
-      <input type="tel" id="phone" placeholder="Phone number" required>
-      <button class="btn" type="submit">SEND</button>
-    </form>
-  </div>
+<h2>Order Now</h2>
 
-</div>
+<p>Fill in your details and we will contact you</p>
+  <input id="name" type="text" placeholder="Your name"><hr></hr>
+<input id="phone" type="tel" placeholder="Phone number">
+<textarea id="comment" placeholder="Your message"></textarea>
+
+<button class="send-btn" onclick="sendOrder()">Send</button>
+</section>
+
+</div> <!-- contact-box yopilishi -->
+
+</section> <!-- contact section yopilishi -->
 
 <!-- MAP -->
 <div class="map">
